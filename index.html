@@ -7,32 +7,35 @@
 
 <title>Anna Hovsepyan | Shopify Developer & eCommerce Specialist</title>
 
-<meta name="description" content="Anna Hovsepyan is a Shopify Developer specializing in Shopify Liquid, custom theme development, HTML, CSS, JavaScript and luxury eCommerce experiences.">
+<meta name="description" content="Explore Anna Hovsepyan's Shopify development portfolio. Shopify Liquid, custom theme sections, HTML, CSS, JavaScript and premium eCommerce experiences.">
 
-<meta name="keywords" content="Shopify Developer, Shopify Expert, Liquid Developer, eCommerce Developer, HTML, CSS, JavaScript">
+<meta name="keywords" content="Shopify Developer, Shopify Liquid, Custom Shopify Sections, eCommerce Developer, HTML5, CSS3, JavaScript">
 
 <meta name="author" content="Anna Hovsepyan">
+<meta name="theme-color" content="#f7f5f0">
 
 <meta property="og:title" content="Anna Hovsepyan | Shopify Developer">
-<meta property="og:description" content="Building refined, responsive and high-quality Shopify experiences.">
+<meta property="og:description" content="Thoughtful Shopify development. Refined digital experiences.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #f8f6f1;
-  --cream: #eee9df;
+  --bg: #f7f5f0;
+  --white: #fff;
+  --cream: #eeeae1;
   --dark: #25231f;
   --muted: #777168;
-  --accent: #a88b6d;
-  --light: #ffffff;
-  --line: #e6e0d6;
+  --accent: #a98b6b;
+  --accent-light: #d6c1a7;
+  --line: #e5dfd4;
   --serif: 'Playfair Display', serif;
   --sans: 'DM Sans', sans-serif;
+  --container: 1180px;
 }
 
 * {
@@ -50,21 +53,26 @@ body {
   background: var(--bg);
   color: var(--dark);
   font-family: var(--sans);
-  line-height: 1.75;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-img {
-  max-width: 100%;
+button {
+  font: inherit;
+}
+
+img, video {
   display: block;
+  max-width: 100%;
 }
 
 .container {
-  width: min(1160px, 88%);
+  width: min(var(--container), 88%);
   margin: auto;
 }
 
@@ -88,20 +96,22 @@ h1, h2, h3 {
 }
 
 .section-title {
-  font-size: clamp(36px, 5vw, 55px);
-  margin-bottom: 20px;
-  letter-spacing: -.7px;
+  font-size: clamp(36px, 5vw, 58px);
+  margin-bottom: 22px;
+  letter-spacing: -1px;
 }
 
 .section-description {
-  max-width: 660px;
+  max-width: 680px;
   color: var(--muted);
   font-size: 14px;
-  margin-bottom: 45px;
+  margin-bottom: 48px;
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 29px;
   background: var(--dark);
   color: white;
@@ -110,7 +120,8 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: 1px solid var(--dark);
-  transition: .3s;
+  transition: .35s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -119,32 +130,46 @@ h1, h2, h3 {
   transform: translateY(-3px);
 }
 
-.btn-light {
+.btn-outline {
   background: transparent;
   color: var(--dark);
   margin-left: 10px;
 }
 
-.btn-light:hover {
+.btn-outline:hover {
   color: white;
 }
 
-/* NAVIGATION */
+.text-link {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 6px;
+  transition: .3s;
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* HEADER */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(248,246,241,.96);
-  backdrop-filter: blur(12px);
+  z-index: 1000;
+  background: rgba(247,245,240,.96);
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--line);
 }
 
 nav {
-  min-height: 78px;
+  min-height: 80px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -159,7 +184,8 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 26px;
   list-style: none;
 }
 
@@ -173,38 +199,57 @@ nav {
   color: var(--accent);
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 /* HERO */
 
 .hero {
-  min-height: 700px;
+  min-height: 730px;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  border: 1px solid #e6ddcf;
+  border-radius: 50%;
+  right: -200px;
+  top: 40px;
+}
+
 .hero::after {
   content: "";
   position: absolute;
-  width: 520px;
-  height: 520px;
-  border: 1px solid #e7ddcf;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #e6ddcf;
   border-radius: 50%;
-  right: -180px;
-  top: 80px;
-  pointer-events: none;
+  right: -90px;
+  top: 150px;
 }
 
 .hero-content {
-  max-width: 820px;
+  max-width: 850px;
   position: relative;
   z-index: 2;
 }
 
 .hero h1 {
-  font-size: clamp(53px, 8vw, 96px);
-  line-height: 1.08;
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 1.04;
   margin-bottom: 30px;
+  letter-spacing: -2px;
 }
 
 .hero h1 span {
@@ -213,39 +258,40 @@ nav {
 }
 
 .hero-text {
-  max-width: 590px;
+  max-width: 620px;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 35px;
 }
 
 .hero-note {
-  margin-top: 45px;
+  margin-top: 48px;
   font-size: 10px;
   color: var(--muted);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-/* INTRO STRIP */
+/* TRUST STRIP */
 
-.intro-strip {
+.trust-strip {
   background: var(--dark);
   color: white;
-  padding: 27px 0;
+  padding: 28px 0;
 }
 
 .strip-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   text-align: center;
 }
 
 .strip-item {
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #e4ddd3;
+  color: #e3dbd0;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 /* ABOUT */
@@ -257,7 +303,7 @@ nav {
 .about-grid {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  gap: 90px;
+  gap: 85px;
   align-items: center;
 }
 
@@ -267,40 +313,79 @@ nav {
   margin-bottom: 19px;
 }
 
-.about-quote {
-  font-family: var(--serif);
-  font-size: 29px;
-  line-height: 1.5;
-  border-left: 2px solid var(--accent);
-  padding: 15px 0 15px 28px;
+.about-visual {
+  min-height: 430px;
+  background:
+    linear-gradient(145deg, rgba(37,35,31,.12), rgba(37,35,31,.55)),
+    url("https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=1200") center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 35px;
 }
 
-.about-quote span {
-  color: var(--accent);
+.about-visual-text {
+  color: white;
+  font-family: var(--serif);
+  font-size: 30px;
+  max-width: 330px;
+}
+
+.about-visual-text span {
+  color: #e5c9a9;
   font-style: italic;
+}
+
+/* PHILOSOPHY */
+
+.philosophy {
+  text-align: center;
+  background: var(--dark);
+  color: white;
+}
+
+.philosophy blockquote {
+  font-family: var(--serif);
+  font-size: clamp(30px, 5vw, 57px);
+  line-height: 1.4;
+  max-width: 920px;
+  margin: auto;
+}
+
+.philosophy blockquote span {
+  color: var(--accent-light);
+  font-style: italic;
+}
+
+.philosophy p {
+  color: #c5bdb1;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  text-transform: uppercase;
 }
 
 /* EXPERTISE */
 
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
 .expertise-card {
-  padding: 32px 27px;
   background: white;
   border: 1px solid var(--line);
-  transition: .3s;
+  padding: 34px 28px;
+  transition: .35s;
 }
 
 .expertise-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-7px);
   border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(37,35,31,.06);
 }
 
-.number {
+.card-number {
   color: var(--accent);
   font-size: 11px;
   letter-spacing: 2px;
@@ -309,12 +394,12 @@ nav {
 
 .expertise-card h3 {
   font-size: 24px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 .expertise-card p {
-  color: var(--muted);
   font-size: 12px;
+  color: var(--muted);
 }
 
 /* SKILLS */
@@ -323,73 +408,111 @@ nav {
   background: var(--cream);
 }
 
-.skill-list {
+.skill-columns {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 30px 70px;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
 }
 
-.skill-item {
-  border-bottom: 1px solid #d9d0c4;
-  padding-bottom: 17px;
+.skill-group h3 {
+  font-size: 27px;
+  margin-bottom: 25px;
 }
 
-.skill-heading {
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tags span {
+  background: white;
+  border: 1px solid #e0d8cc;
+  padding: 12px 18px;
+  font-size: 11px;
+  color: #625a50;
+  transition: .3s;
+}
+
+.skill-tags span:hover {
+  background: var(--dark);
+  color: white;
+}
+
+.skill-note {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 12px;
+  max-width: 550px;
+}
+
+/* VIDEO SHOWCASE */
+
+.video-section {
+  background: var(--bg);
+}
+
+.video-wrapper {
+  position: relative;
+  background: #201f1b;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.video-wrapper video {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  background: #25231f;
+}
+
+.video-caption {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 23px 27px;
+  background: white;
 }
 
-.skill-heading h3 {
-  font-size: 19px;
+.video-caption h3 {
+  font-size: 23px;
 }
 
-.skill-heading span {
-  color: var(--accent);
-  font-size: 10px;
-  letter-spacing: 1px;
+.video-caption p {
+  color: var(--muted);
+  font-size: 11px;
 }
 
-.skill-track {
-  height: 3px;
-  background: #ddd5c9;
-}
-
-.skill-track span {
-  height: 100%;
-  display: block;
-  background: var(--accent);
-}
-
-/* PROJECTS */
+/* FEATURED PROJECT */
 
 .projects {
-  background: var(--bg);
+  background: var(--cream);
 }
 
 .project-feature {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   background: white;
-  margin-bottom: 50px;
   border: 1px solid var(--line);
   overflow: hidden;
 }
 
-.project-visual {
-  min-height: 430px;
+.project-image {
+  min-height: 480px;
   overflow: hidden;
 }
 
-.project-visual img {
+.project-image img {
   width: 100%;
   height: 100%;
-  min-height: 430px;
+  min-height: 480px;
   object-fit: cover;
-  transition: .5s;
+  transition: .6s;
 }
 
-.project-feature:hover .project-visual img {
+.project-feature:hover .project-image img {
   transform: scale(1.04);
 }
 
@@ -409,65 +532,63 @@ nav {
 }
 
 .project-content h3 {
-  font-size: 36px;
+  font-size: 37px;
   margin-bottom: 20px;
 }
 
 .project-content p {
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 28px;
+  margin: 12px 0 28px;
 }
 
 .project-tags span {
-  padding: 7px 11px;
   background: var(--bg);
+  padding: 7px 11px;
   font-size: 9px;
   color: #6b6257;
   letter-spacing: .5px;
 }
 
-.project-link {
-  display: inline-block;
-  width: fit-content;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 6px;
-}
-
-.project-link:hover {
-  color: var(--accent);
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
 }
 
 /* CASE STUDY */
 
 .case-study {
-  background: var(--cream);
+  background: var(--bg);
 }
 
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .case-card {
   background: white;
-  padding: 32px;
+  padding: 35px;
   border: 1px solid var(--line);
+  transition: .3s;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
 }
 
 .case-card h3 {
-  font-size: 23px;
+  font-size: 25px;
   margin-bottom: 15px;
 }
 
@@ -478,9 +599,18 @@ nav {
 
 /* PROCESS */
 
+.process {
+  background: var(--dark);
+  color: white;
+}
+
+.process .section-description {
+  color: #c7c0b5;
+}
+
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -489,18 +619,20 @@ nav {
   padding-top: 25px;
 }
 
-.process-card .number {
+.process-number {
+  color: var(--accent-light);
   font-family: var(--serif);
-  font-size: 34px;
+  font-size: 38px;
+  margin-bottom: 20px;
 }
 
 .process-card h3 {
-  font-size: 22px;
-  margin-bottom: 12px;
+  font-size: 23px;
+  margin-bottom: 13px;
 }
 
 .process-card p {
-  color: var(--muted);
+  color: #c7c0b5;
   font-size: 12px;
 }
 
@@ -512,13 +644,13 @@ nav {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
 .service-card {
   background: white;
-  padding: 30px;
+  padding: 34px 28px;
   border-bottom: 2px solid transparent;
   transition: .3s;
 }
@@ -530,7 +662,7 @@ nav {
 
 .service-card h3 {
   font-size: 24px;
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 }
 
 .service-card p {
@@ -538,1028 +670,33 @@ nav {
   font-size: 12px;
 }
 
-/* WHY ME */
+/* QUALITY */
 
-.why-grid {
+.quality-grid {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: 80px;
   align-items: start;
 }
 
-.why-list {
+.quality-list {
   list-style: none;
 }
 
-.why-list li {
+.quality-list li {
   border-bottom: 1px solid var(--line);
   padding: 17px 0;
   font-size: 13px;
   color: #625d55;
 }
 
-.why-list li::before {
+.quality-list li::before {
   content: "✦";
   color: var(--accent);
   margin-right: 14px;
 }
 
-/* CTA */
+/* COLLABORATION */
 
-.cta {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 110px 0;
-}
-
-.cta h2 {
-  font-size: clamp(38px,6vw,64px);
-  max-width: 800px;
-  margin: auto;
-}
-
-.cta h2 span {
-  color: #c5a889;
-  font-style: italic;
-}
-
-.cta p {
-  max-width: 560px;
-  color: #c7c0b5;
-  font-size: 13px;
-  margin: 25px auto 35px;
-}
-
-.cta .btn {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.cta .btn:hover {
-  background: white;
-  color: var(--dark);
-}
-
-/* CONTACT */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.contact-info p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 25px;
-}
-
-.contact-details a {
-  display: block;
-  margin-bottom: 13px;
-  font-size: 13px;
-  color: var(--accent);
-  overflow-wrap: anywhere;
-}
-
-.contact-note {
-  background: white;
-  padding: 40px;
-  border: 1px solid var(--line);
-}
-
-.contact-note h3 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.contact-note p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 25px;
-}
-
-/* FOOTER */
-
-footer {
-  background: #1e1d19;
-  color: #ddd5c9;
-  padding: 35px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-logo {
-  font-family: var(--serif);
-  font-size: 22px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-  font-size: 11px;
-}
-
-.footer-links a:hover {
-  color: #c5a889;
-}
-
-.copyright {
-  font-size: 10px;
-  color: #aaa397;
-}
-
-/* ANIMATION */
-
-.fade-in {
-  animation: appear .9s ease both;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-
-@media(max-width:850px) {
-  .about-grid,
-  .project-feature,
-  .why-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .expertise-grid,
-  .services-grid,
-  .case-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .project-visual,
-  .project-visual img {
-    min-height: 320px;
-  }
-
-  .project-content {
-    padding: 35px;
-  }
-}
-
-@media(max-width:600px) {
-  section {
-    padding: 75px 0;
-  }
-
-  nav {
-    align-items: flex-start;
-    padding: 17px 0;
-    gap: 15px;
-  }
-
-  .nav-links {
-    gap: 9px 14px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .nav-links a {
-    font-size: 10px;
-  }
-
-  .logo {
-    font-size: 20px;
-    white-space: nowrap;
-  }
-
-  .hero {
-    min-height: 590px;
-  }
-
-  .hero::after {
-    width: 300px;
-    height: 300px;
-    right: -180px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-  }
-
-  .strip-grid {
-    grid-template-columns: repeat(2,1fr);
-    gap: 17px;
-  }
-
-  .expertise-grid,
-  .services-grid,
-  .case-grid,
-  .skill-list,
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-content {
-    padding: 28px 23px;
-  }
-
-  .project-content h3 {
-    font-size: 30px;
-  }
-
-  .btn {
-    padding: 13px 18px;
-  }
-
-  .btn-light {
-    margin: 12px 0 0;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="container">
-    <nav>
-      <a href="#" class="logo">ANNA<span>.</span></a>
-
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-content fade-in">
-
-      <div class="eyebrow">
-        Shopify Developer | eCommerce Specialist
-      </div>
-
-      <h1>
-        Creating Digital<br>
-        Experiences with<br>
-        <span>Purpose & Elegance.</span>
-      </h1>
-
-      <p class="hero-text">
-        I help transform creative ideas into refined,
-        functional and responsive Shopify experiences.
-        Combining thoughtful design with front-end
-        development, I build digital storefronts that
-        reflect brand identity and deliver a seamless
-        customer journey.
-      </p>
-
-      <a href="#projects" class="btn">
-        Explore My Work
-      </a>
-
-      <a href="#contact" class="btn btn-light">
-        Let's Collaborate
-      </a>
-
-      <div class="hero-note">
-        Shopify Development · Customization · eCommerce Design
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- INTRO STRIP -->
-
-<div class="intro-strip">
-  <div class="container strip-grid">
-    <div class="strip-item">Shopify Development</div>
-    <div class="strip-item">Custom Liquid</div>
-    <div class="strip-item">Front-End Development</div>
-    <div class="strip-item">Responsive Design</div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-  <div class="container">
-
-    <div class="about-grid">
-
-      <div class="about-copy">
-        <div class="eyebrow">About Me</div>
-
-        <h2 class="section-title">
-          A Passion for Building
-          Meaningful Digital Experiences.
-        </h2>
-
-        <p>
-          Hello, I'm Anna Hovsepyan, a Shopify Developer
-          focused on creating visually refined and
-          user-friendly eCommerce websites.
-        </p>
-
-        <p>
-          My journey into eCommerce development began
-          with a genuine interest in the intersection
-          of design, technology and business. I enjoy
-          understanding how a brand communicates
-          visually and translating that identity into
-          an engaging online shopping experience.
-        </p>
-
-        <p>
-          I work with Shopify, Liquid, HTML, CSS and
-          JavaScript to customize themes, develop
-          tailored sections and improve storefront
-          presentation and functionality.
-        </p>
-
-        <p>
-          I believe that successful eCommerce development
-          requires more than attractive visuals.
-          It requires structure, attention to detail,
-          usability, responsiveness and a clear
-          understanding of the customer's journey.
-        </p>
-
-        <p>
-          My approach is thoughtful, detail-oriented
-          and focused on delivering work that supports
-          the client's vision and business objectives.
-        </p>
-      </div>
-
-      <div class="about-quote">
-        "Great digital experiences are created when
-        <span>beautiful design</span> meets purposeful
-        technology."
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EXPERTISE -->
-
-<section id="expertise">
-  <div class="container">
-
-    <div class="eyebrow">Core Expertise</div>
-
-    <h2 class="section-title">
-      Where Design Meets Development.
-    </h2>
-
-    <p class="section-description">
-      I focus on combining technical implementation
-      with clean aesthetics to create eCommerce
-      experiences that are consistent, intuitive
-      and aligned with the brand.
-    </p>
-
-    <div class="expertise-grid">
-
-      <div class="expertise-card">
-        <div class="number">01 / PLATFORM</div>
-        <h3>Shopify Development</h3>
-        <p>
-          Shopify storefront setup, theme customization,
-          page structure, content organization and
-          storefront improvements.
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="number">02 / DEVELOPMENT</div>
-        <h3>Custom Liquid</h3>
-        <p>
-          Custom Liquid implementation, reusable
-          content sections and theme-level
-          customization using Shopify Liquid.
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="number">03 / STRUCTURE</div>
-        <h3>HTML & CSS</h3>
-        <p>
-          Structured markup, custom styling,
-          modern layouts, visual consistency
-          and responsive interfaces.
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="number">04 / INTERACTIVITY</div>
-        <h3>JavaScript</h3>
-        <p>
-          Front-end interactions, interactive
-          components and functionality enhancements.
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="number">05 / EXPERIENCE</div>
-        <h3>Responsive Design</h3>
-        <p>
-          Mobile-first layouts and adaptive
-          interfaces for desktop, tablet and
-          mobile devices.
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="number">06 / PRESENTATION</div>
-        <h3>Luxury eCommerce</h3>
-        <p>
-          Elegant visual direction, premium
-          product presentation and consistent
-          brand aesthetics.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TECHNICAL SKILLS -->
-
-<section class="skills" id="skills">
-  <div class="container">
-
-    <div class="eyebrow">Technical Toolkit</div>
-
-    <h2 class="section-title">
-      Technologies & Skills.
-    </h2>
-
-    <p class="section-description">
-      My technical toolkit allows me to customize
-      storefronts, structure content and build
-      engaging front-end experiences.
-    </p>
-
-    <div class="skill-list">
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>Shopify</h3>
-          <span>ECOMMERCE PLATFORM</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:85%"></span>
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>Liquid</h3>
-          <span>THEME CUSTOMIZATION</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:80%"></span>
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>HTML5</h3>
-          <span>WEB STRUCTURE</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:90%"></span>
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>CSS3</h3>
-          <span>STYLING & LAYOUT</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:85%"></span>
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>JavaScript</h3>
-          <span>FRONT-END</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:65%"></span>
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <div class="skill-heading">
-          <h3>Responsive Design</h3>
-          <span>ADAPTIVE INTERFACES</span>
-        </div>
-        <div class="skill-track">
-          <span style="width:85%"></span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED PROJECT -->
-
-<section class="projects" id="projects">
-  <div class="container">
-
-    <div class="eyebrow">Selected Work</div>
-
-    <h2 class="section-title">
-      Featured Project.
-    </h2>
-
-    <p class="section-description">
-      A self-directed Shopify eCommerce project
-      demonstrating my approach to visual design,
-      storefront customization and digital presentation.
-    </p>
-
-    <article class="project-feature">
-
-      <div class="project-visual">
-        <img
-          src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=1200"
-          alt="Luxury skincare and beauty products">
-      </div>
-
-      <div class="project-content">
-
-        <div class="project-label">
-          Featured Shopify Project · Beauty & Cosmetics
-        </div>
-
-        <h3>Luxury Beauty E-Commerce Store</h3>
-
-        <p>
-          A luxury-inspired beauty eCommerce storefront
-          developed as an independent portfolio project.
-          The concept focuses on refined aesthetics,
-          elegant typography, structured product
-          presentation and a cohesive brand identity.
-        </p>
-
-        <p>
-          The project includes customized content
-          sections, editorial-style page layouts,
-          product descriptions and visual elements
-          designed to create a premium shopping
-          experience.
-        </p>
-
-        <div class="project-tags">
-          <span>SHOPIFY</span>
-          <span>LIQUID</span>
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JAVASCRIPT</span>
-          <span>ECOMMERCE DESIGN</span>
-        </div>
-
-        <a
-          href="https://anna-hovsepyan-zxd61h11.myshopify.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link">
-          Explore Live Store →
-        </a>
-
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- CASE STUDY -->
-
-<section class="case-study">
-  <div class="container">
-
-    <div class="eyebrow">Behind The Project</div>
-
-    <h2 class="section-title">
-      Project Overview.
-    </h2>
-
-    <p class="section-description">
-      A closer look at the key areas of the Luxury
-      Beauty Shopify project.
-    </p>
-
-    <div class="case-grid">
-
-      <div class="case-card">
-        <div class="number">01</div>
-        <h3>Project Concept</h3>
-        <p>
-          Creating a premium beauty eCommerce
-          concept with a consistent visual language,
-          elegant presentation and a clear brand direction.
-        </p>
-      </div>
-
-      <div class="case-card">
-        <div class="number">02</div>
-        <h3>Design & Structure</h3>
-        <p>
-          Organizing website pages, developing
-          content hierarchy, refining product
-          descriptions and creating a cohesive
-          storefront presentation.
-        </p>
-      </div>
-
-      <div class="case-card">
-        <div class="number">03</div>
-        <h3>Technical Implementation</h3>
-        <p>
-          Working with Shopify customization,
-          Custom Liquid, HTML and CSS to implement
-          tailored visual and content elements.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- WORKFLOW -->
-
-<section id="process">
-  <div class="container">
-
-    <div class="eyebrow">My Working Approach</div>
-
-    <h2 class="section-title">
-      From Idea to Implementation.
-    </h2>
-
-    <p class="section-description">
-      A structured and collaborative approach
-      helps keep development organized and aligned
-      with the project's goals.
-    </p>
-
-    <div class="process-grid">
-
-      <div class="process-card">
-        <div class="number">01</div>
-        <h3>Discovery</h3>
-        <p>
-          Understanding the client's goals,
-          brand identity, requirements and
-          project expectations.
-        </p>
-      </div>
-
-      <div class="process-card">
-        <div class="number">02</div>
-        <h3>Planning</h3>
-        <p>
-          Organizing the website structure,
-          identifying required customizations
-          and defining the implementation approach.
-        </p>
-      </div>
-
-      <div class="process-card">
-        <div class="number">03</div>
-        <h3>Development</h3>
-        <p>
-          Implementing the agreed design and
-          functionality through Shopify,
-          Liquid and front-end technologies.
-        </p>
-      </div>
-
-      <div class="process-card">
-        <div class="number">04</div>
-        <h3>Review & Refinement</h3>
-        <p>
-          Reviewing the completed work,
-          checking responsive layouts and
-          refining details based on feedback.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-
-<section class="services" id="services">
-  <div class="container">
-
-    <div class="eyebrow">How I Can Help</div>
-
-    <h2 class="section-title">
-      Development Services.
-    </h2>
-
-    <p class="section-description">
-      Practical Shopify and front-end services
-      for brands looking to build, customize
-      or improve their online storefronts.
-    </p>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <h3>Shopify Store Setup</h3>
-        <p>
-          Store configuration, page organization,
-          navigation structure and storefront setup.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Theme Customization</h3>
-        <p>
-          Customizing existing Shopify themes
-          to align with a brand's design
-          and functional requirements.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Custom Liquid Sections</h3>
-        <p>
-          Creating tailored content sections
-          and implementing custom Liquid
-          within Shopify themes.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Custom HTML & CSS</h3>
-        <p>
-          Building custom layouts, styling
-          website components and improving
-          visual consistency.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Front-End Enhancements</h3>
-        <p>
-          Implementing JavaScript interactions
-          and refining website functionality.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Responsive Improvements</h3>
-        <p>
-          Adapting website layouts for
-          different screen sizes and
-          improving mobile presentation.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHY WORK WITH ME -->
-
-<section id="why-me">
-  <div class="container">
-
-    <div class="why-grid">
-
-      <div>
-        <div class="eyebrow">Professional Values</div>
-
-        <h2 class="section-title">
-          Why Work With Me?
-        </h2>
-
-        <p class="section-description">
-          I believe successful collaboration
-          starts with clear communication,
-          thoughtful execution and a genuine
-          commitment to quality.
-        </p>
-      </div>
-
-      <ul class="why-list">
-
-        <li>
-          Detail-oriented approach to design
-          and development.
-        </li>
-
-        <li>
-          Focus on understanding the client's
-          vision and business objectives.
-        </li>
-
-        <li>
-          Clear communication throughout
-          the development process.
-        </li>
-
-        <li>
-          Organized implementation and
-          structured problem-solving.
-        </li>
-
-        <li>
-          Attention to responsive layouts
-          and user experience.
-        </li>
-
-        <li>
-          Willingness to learn, adapt
-          and continuously improve.
-        </li>
-
-        <li>
-          Commitment to delivering work
-          aligned with agreed requirements.
-        </li>
-
-      </ul>
-
-    </div>
-  </div>
-</section>
-
-<!-- CALL TO ACTION -->
-
-<section class="cta">
-  <div class="container">
-
-    <div class="eyebrow">Let's Create Something Exceptional</div>
-
-    <h2>
-      Your Next eCommerce Project
-      Deserves <span>Thoughtful Development.</span>
-    </h2>
-
-    <p>
-      Whether you need Shopify theme customization,
-      custom Liquid sections or a refined storefront,
-      I would be happy to discuss your project
-      and explore how I can contribute.
-    </p>
-
-    <a href="#contact" class="btn">
-      Start a Conversation
-    </a>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-  <div class="container">
-
-    <div class="contact-grid">
-
-      <div class="contact-info">
-        <div class="eyebrow">Get In Touch</div>
-
-        <h2 class="section-title">
-          Let's Work Together.
-        </h2>
-
-        <p>
-          Have a Shopify project, a customization
-          requirement or an idea you would like
-          to bring to life?
-
-          Feel free to reach out. I am open
-          to discussing new projects and
-          professional collaborations.
-        </p>
-
-        <div class="contact-details">
-
-          <!-- Replace with your actual email -->
-          <a href="mailto:YOUR_EMAIL@example.com">
-            YOUR_EMAIL@example.com
-          </a>
-
-          <!-- Replace with your actual LinkedIn -->
-          <a href="YOUR_LINKEDIN_URL"
-             target="_blank"
-             rel="noopener noreferrer">
-            LinkedIn Profile →
-          </a>
-
-          <!-- Replace with your actual Upwork -->
-          <a href="YOUR_UPWORK_URL"
-             target="_blank"
-             rel="noopener noreferrer">
-            Upwork Profile →
-          </a>
-
-        </div>
-      </div>
-
-      <div class="contact-note">
-
-        <div class="eyebrow">Open For Collaboration</div>
-
-        <h3>Let's Turn Your Vision Into Reality.</h3>
-
-        <p>
-          I welcome opportunities to work with
-          entrepreneurs, eCommerce brands,
-          creative teams and businesses looking
-          for thoughtful Shopify development.
-        </p>
-
-        <a href="mailto:YOUR_EMAIL@example.com"
-           class="btn">
-          Contact Me
-        </a>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-  <div class="container">
-
-    <div class="footer-inner">
-
-      <div class="footer-logo">
-        Anna Hovsepyan.
-      </div>
-
-      <div class="footer-links">
-
-        <a href="YOUR_LINKEDIN_URL">LinkedIn</a>
-
-        <a href="YOUR_UPWORK_URL">Upwork</a>
-
-        <a href="YOUR_GITHUB_URL">GitHub</a>
-
-      </div>
-
-      <div class="copyright">
-        © 2026 Anna Hovsepyan. All Rights Reserved.
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-</body>
-</html>
+.collaboration {
+  background: var(--
